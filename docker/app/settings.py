@@ -31,11 +31,11 @@ EMAIL_BACKEND = ''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbname',
-        'USER': 'dbuser',
-        'PASSWORD': 'dbpass',
-        'HOST': 'db',
-        'PORT': 5432,
+        'NAME': os.getenv("PAPERMERGE_DBNAME", 'dbname')
+        'USER': os.getenv("PAPERMERGE_DBUSER", 'dbuser')
+        'PASSWORD': os.getenv("PAPERMERGE_DBPASS", 'dbpass')
+        'HOST': os.getenv("PAPERMERGE_DBHOST", 'db')
+        'PORT': os.getenv("PAPERMERGE_DBPORT", 5432)
     },
 }
 
